@@ -1,0 +1,23 @@
+.rollDice {
+  display: flex;
+  flex-flow: column nowrap;
+  display: inline-block;
+}
+
+.rollDice-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.rollButton {
+  display: block;
+  width: 100%;
+  height: 70px;
+  border: none;
+  background-color: burlywood;
+  margin-top: 20px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
