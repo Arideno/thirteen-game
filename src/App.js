@@ -2,7 +2,7 @@ import {RollDice} from './components/RollDice'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import './css/App.css'
-import { minimax, Node } from './utils'
+import { expectimax, Node } from './utils'
 
 function App() {
   const [playerTempSum, setPlayerTempSum] = useState(0)
@@ -139,7 +139,7 @@ function App() {
     let bestValue = -1
     let bestNode = null
     for (let i = 0; i < children.length; i++) {
-      const temp = minimax(children[i], false)
+      const temp = expectimax(children[i], false)
       if (bestValue < temp) {
         bestValue = temp
         bestNode = children[i]

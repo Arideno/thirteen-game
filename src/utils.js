@@ -61,7 +61,7 @@ export class Node {
   }
 }
 
-export function minimax(node, isMaxNode) {
+export function expectimax(node, isMaxNode) {
   if (node.time > 5) {
     return node.points
   }
@@ -69,7 +69,7 @@ export function minimax(node, isMaxNode) {
   if (isMaxNode) {
     let bestValue = -1
     for (let i = 0; i < children.length; i++) {
-      const temp = minimax(children[i], false)
+      const temp = expectimax(children[i], false)
       if (bestValue < temp) {
         bestValue = temp
       }
@@ -92,7 +92,7 @@ export function minimax(node, isMaxNode) {
         } else {
           chance = 1/18
         }
-        sum += chance * minimax(new Node(node.currentSum, i + j, node.time + 1, node.points, ''), true)
+        sum += chance * expectimax(new Node(node.currentSum, i + j, node.time + 1, node.points, ''), true)
       }
     }
     return sum
